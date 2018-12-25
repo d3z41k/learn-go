@@ -25,8 +25,6 @@ func main() {
 	fmt.Scanln()
 }
 
-
-
 func formatWork(in, j int) string {
 	return fmt.Sprintln(strings.Repeat("  ", in), "*",
 		strings.Repeat("  ", goroutinesNum-in),
