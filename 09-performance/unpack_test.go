@@ -102,10 +102,10 @@ func UnpackReflect(u interface{}, data []byte) error {
 
 	go test -bench . -benchmem -cpuprofile=cpu.out -memprofile=mem.out -memprofilerate=1 unpack_test.go
 
-	go tool pprof main.test.exe cpu.out
-	go tool pprof main.test.exe mem.out
+	go tool pprof main.test cpu.out
+	go tool pprof main.test mem.out
 
 	go get github.com/uber/go-torch
-	go-torch main.test.exe cpu.out
+	go-torch main.test cpu.out
 
 */
