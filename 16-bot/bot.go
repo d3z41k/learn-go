@@ -1,16 +1,17 @@
 package main
 
 import (
-	"net/http"
-	"io/ioutil"
 	"encoding/xml"
-	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+
+	tgbotapi "gopkg.in/telegram-bot-api.v4"
 )
 
 const (
-	BotToken 	= "xxxx"
-	WebHookURL 	= "https://xxxx.ngrok.io"
+	BotToken   = "729408127:AAH9gnDl-W6d_X4w2EJx5F8fJkSBPF16Atg"
+	WebHookURL = "https://a516b153.ngrok.io"
 )
 
 var rss = map[string]string{
@@ -34,8 +35,6 @@ func getNews(url string) (*RSS, error) {
 
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
-
-
 
 	rss := new(RSS)
 	err = xml.Unmarshal(body, rss)
